@@ -8,7 +8,7 @@ async function getWeatherData(location) {
 		let data = await rawData.json();
 		return data;
 	} catch (error) {
-		console.log(error);
+		throw new Error("Something went wrong");
 	}
 }
 
