@@ -6,15 +6,172 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <form>
+<body style="background-color: #2f2235; margin: 0;">
+    <div id="utilities-container">
+        <button id="saved-places">Saved Places</button>
         <input type="text" autocomplete="off" placeholder="Enter country/city name" id="search-bar">
-    </form>
-    <script src="dom.js" type="module"></script>
-    <div id="weather-container">
-        <h1 id="place-name"></h1>
-        <h2 id="temperature"></h2>
-        <h2 id="description"></h2>
+        <div>
+            <button id="convert">Convert Unit</button>
+            <button id="save">Save Place</button>
+        </div>
     </div>
+    <div id="body-container">
+        <div id="sidebar">
+            <div id="sidebar-content">
+                <button>Hanoi, Vietnam</button> 
+                <button>Seoul, South Korea</button>
+            </div>
+        </div>
+        <div id="weather-container">
+            <div id="header-container">
+                <h1 id="place-name">Hanoi</h1>
+                <span id="local-time">June 20th, 2026, Local time: 19:59</span>
+            </div>
+
+            <div id="temperature-container">
+                <div class="weather-icon clear-day"></div>
+                <h2 id="temperature">32° Fahrenheit</h2>
+                <span id="feels-like">Overcast</span>
+                <h3 id="description"></h3>
+            </div>
+
+            <div id="condition-container">
+                <h1 id="conditions">Conditions</h1>
+                <div id="humidity">
+                    <div class="icon" style="background-image: url(images/humidity.svg)"></div>
+                    <span>Humidity 55%</span>
+                </div>
+                <div id="uv-index">
+                    <div class="icon" style="background-image: url(images/uvindex.svg)"></div>
+                    <span>UV Index 5</span>
+                </div>
+                <div id="precipitation">
+                    <div class="icon" style="background-image: url(images/rain.svg)"></div>
+                    <span>Precipitation 16%</span>
+                </div>
+                <div id="sunrise">
+                    <div class="icon" style="background-image: url(images/sunrise.svg)"></div>
+                    <span>Sunrise 05:36</span>
+                </div>
+                <div id="sunset">
+                    <div class="icon" style="background-image: url(images/sunset.svg)"></div>
+                    <span>Sunset 18:27</span>
+                </div>
+                <div id="wind">
+                    <div class="icon" style="background-image: url(images/wind.svg)"></div>
+                    <span>Wind 7km/h</span>
+                </div>
+            </div>
+
+            <div id="prediction-container">
+                <h1>Hourly Predictions</h1>
+                <div id="hourly-predictions">
+                    <div class="hourly-predict">
+                        <span>13:00</span>
+                        <div class="icon-predict clear-day"></div>
+                        <span>32°F</span>
+                    </div>
+                    <div class="hourly-predict">
+                        <span>13:00</span>
+                        <div class="icon-predict clear-day"></div>
+                        <span>32°F</span>
+                    </div>
+                    <div class="hourly-predict">
+                        <span>13:00</span>
+                        <div class="icon-predict clear-day"></div>
+                        <span>32°F</span>
+                    </div>
+                    <div class="hourly-predict">
+                        <span>13:00</span>
+                        <div class="icon-predict clear-day"></div>
+                        <span>32°F</span>
+                    </div>
+                    <div class="hourly-predict">
+                        <span>13:00</span>
+                        <div class="icon-predict clear-day"></div>
+                        <span>32°F</span>
+                    </div>
+                    <div class="hourly-predict">
+                        <span>13:00</span>
+                        <div class="icon-predict clear-day"></div>
+                        <span>32°F</span>
+                    </div>
+                    <div class="hourly-predict">
+                        <span>13:00</span>
+                        <div class="icon-predict clear-day"></div>
+                        <span>32°F</span>
+                    </div>
+                    <div class="hourly-predict">
+                        <span>13:00</span>
+                        <div class="icon-predict clear-day"></div>
+                        <span>32°F</span>
+                    </div>
+                    <div class="hourly-predict">
+                        <span>13:00</span>
+                        <div class="icon-predict clear-day"></div>
+                        <span>32°F</span>
+                    </div>
+                    <div class="hourly-predict">
+                        <span>13:00</span>
+                        <div class="icon-predict clear-day"></div>
+                        <span>32°F</span>
+                    </div>
+                    <div class="hourly-predict">
+                        <span>13:00</span>
+                        <div class="icon-predict clear-day"></div>
+                        <span>32°F</span>
+                    </div>
+                    <div class="hourly-predict">
+                        <span>13:00</span>
+                        <div class="icon-predict clear-day"></div>
+                        <span>32°F</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="forecast-container">
+                <h1>Weekly Forecast</h1>
+                <div id="weekly-forecast">
+                    <div class="forecast-day">
+                        <span>29/06/2926</span>
+                        <div class="icon-predict clear-day"></div>
+                        <span>Max: 32°F, Min: 32°F</span>
+                    </div>
+                    <div class="forecast-day">
+                        <span>29/06/2926</span>
+                        <div class="icon-predict clear-day"></div>
+                        <span>Max: 32°F, Min: 32°F</span>
+                    </div>
+                    <div class="forecast-day">
+                        <span>29/06/2926</span>
+                        <div class="icon-predict clear-day"></div>
+                        <span>Max: 32°F, Min: 32°F</span>
+                    </div>
+                    <div class="forecast-day">
+                        <span>29/06/2926</span>
+                        <div class="icon-predict clear-day"></div>
+                        <span>Max: 32°F, Min: 32°F</span>
+                    </div>
+                    <div class="forecast-day">
+                        <span>29/06/2926</span>
+                        <div class="icon-predict clear-day"></div>
+                        <span>Max: 32°F, Min: 32°F</span>
+                    </div>
+                    <div class="forecast-day">
+                        <span>29/06/2926</span>
+                        <div class="icon-predict clear-day"></div>
+                        <span>Max: 32°F, Min: 32°F</span>
+                    </div>
+                    <div class="forecast-day">
+                        <span>29/06/2926</span>
+                        <div class="icon-predict clear-day"></div>
+                        <span>Max: 32°F, Min: 32°F</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="dom.js" type="module"></script>
 </body>
 </html>

@@ -1,11 +1,250 @@
-#weather-container {
+body {
+    overflow-x: hidden;
+}
+
+#utilities-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #3f3244;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+    z-index: 1;
+}
+
+#utilities-container *, input::placeholder {
+    color: #9266a3;
+    height: 100%;
+    flex-shrink: 1;
+}
+
+#utilities-container input {
+    scale: 0.6;
+    border: 0.5px solid black;
+    border-radius: 24px; 
+    padding: 0px 20px;  
+    outline: none;       
+    background-color:#2f2235;
+    font-size: 1.5rem;
+}
+
+#utilities-container button {
+    background-color: #3f3244;
+    border: transparent;
+    font-size: 1rem;
+}
+
+#utilities-container button:hover {
+    background-color: #2f2235;
+}
+
+#body-container {
+    display: flex;
+    width: 100vw;
+    overflow-x: hidden;
+    height: auto;
     position: absolute;
-    border: 1px solid black;
-    height: 50vh;
-    width: 50vw;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 10%;
+}
+
+#saved-places {
+    width: 150px;
+}
+
+#sidebar {
+    width: 150px;
+    flex-shrink: 0;
+    height: auto;
+    background-color: #261b2b;
+    
+    transition: width 0.4s ease-in-out;
+    overflow: hidden;
+}
+
+#sidebar.collapsed {
+    width: 0px;
+}
+
+#sidebar-content {
+    width: 150px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar-content button {
+    border: transparent;
+    background-color: transparent;
+    color: #9266a3;
+    padding: 15px;
+    font-size: 1rem;
+}
+
+#weather-container {
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "temperature condition"
+    "prediction prediction"
+    "forecast forecast";
+    gap: 20px;
+    color: #bfc3ba;
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+#header-container {
+    grid-area: header;
     text-align: center;
-    border-radius: 5%;
+}
+
+#place-name {
+    font-size: 4.5rem;
+}
+
+#temperature-container {
+    grid-area: temperature;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#temperature-container .weather-icon {
+    width: 200px;
+    height: 200px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.weather-icon.clear-day, .icon-predict.clear-day { background-image: url(images/clear-day.svg); }
+
+#temperature {
+    font-size: 2.5rem;
+}
+
+#feels-like {
+    font-size: 1.5rem;
+}
+
+#condition-container {
+    grid-area: condition;
+    display: grid;
+    grid-template-areas: 
+    "condition condition"
+    "humidity uvIndex"
+    "precipitation sunrise"
+    "wind sunset";
+}
+
+#condition-container #humidity,#uv-index,#precipitation,#sunrise,#sunset,#wind {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    height: 50px;
+}
+
+#condition-container .icon {
+    height: 42px;
+    width: 42px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#conditions {
+    grid-area: condition;
+    text-align: center;
+}
+
+#humidity {
+    grid-area: humidity;
+}
+
+#uv-index {
+    grid-area: uvIndex;
+}
+
+#precipitation {
+    grid-area: precipitation;
+}
+
+#sunrise {
+    grid-area: sunrise;
+}
+
+#sunset {
+    grid-area: sunset;
+}
+
+#wind {
+    grid-area: wind;
+}
+
+#prediction-container {
+    grid-area: prediction;
+    text-align: center;
+    width: 100%;
+}
+
+#hourly-predictions, #weekly-forecast {
+    display: flex;
+    gap: 25px;
+    margin-left: 100px;
+    margin-right: 100px;
+    width: 80vw;
+    overflow-x: auto;
+    height: 175px;
+    overflow-y: hidden;
+}
+
+.hourly-predict {
+    height: 155px;
+    width: 150px;
+    flex-shrink: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #251b2a;
+    justify-content: space-around;
+}
+
+.icon-predict {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 50%;
+    width: 50%;
+}
+
+#hourly-predictions span {
+    font-size: 1.2rem;
+}
+
+#forecast-container {
+    grid-area: forecast;
+    text-align: center;
+    width: 100%;
+}
+
+#weekly-forecast {
+    height: 200px;
+}
+
+.forecast-day {
+    height: 175px;
+    width: 175px;
+    flex-shrink: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #251b2a;
+    justify-content: space-around;
 }
